@@ -21,8 +21,8 @@
 #2
 
 class Money:
-    @staticmethod
-    def to_tenge(number, currency):
+    # @staticmethod
+    def to_tenge(self, number_tenge, number, currency):
         if currency == "USD":
             number_tenge = number * 472
         if currency == "EUR":
@@ -31,6 +31,7 @@ class Money:
             number_tenge = number * 7
         else:
             number_tenge = number
+        return f"{self.to_tenge(number_tenge, number, currency)}"
 
     def __str__(self):
         return f"{self.currency}"
