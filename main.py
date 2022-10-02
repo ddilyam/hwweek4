@@ -19,20 +19,3 @@
 
 
 #2
-class Money:
-    number: [int]  # number in money (like 100$, so 100 is a number)
-    currency: [string]  # currency, on of USD, EUR, RUB, TNG
-    amount: [int]  # amount of that money (like I have 5 of 100$, so 5 is amount)
-
-    def to_tenge():
-
-
-    def __str__():
-        pass
-
-
-class Wallet:
-    money: [list]
-
-    def __str__():
-        pass
