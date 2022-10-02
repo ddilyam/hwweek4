@@ -12,57 +12,58 @@
 #         return self.balanc
 
 
-# m1 = Bank()
-# m2 = Bank()
-# m1.deposit(100)
-# m1.withdraw(100)
-
-
 #2
 
 class Money:
-    # @staticmethod
-    def to_tenge(self, number_tenge, number, currency):
-        if currency == "USD":
-            number_tenge = number * 472
-        if currency == "EUR":
-            number_tenge = number * 457
-        elif currency == "RUB":
-            number_tenge = number * 7
+
+    def __init__(self, number, amount, currency):
+        self.number = number
+        self.currency = currency
+        self.amount = amount
+
+
+    def to_tenge(self):
+        if (self.currency == "USD"):
+            return  self.number * self.amount * 472
+        elif (self.currency == "EUR"):
+            return self.number * self.amount * 457
+        elif (self.currency == "RUB"):
+            return self.number * self.amount * 7
+        elif (self.currency == "TNG"):
+            return self.number * self.number
         else:
-            number_tenge = number
-        return f"{self.to_tenge(number_tenge, number, currency)}"
+            print("Error!")
 
     def __str__(self):
-        return f"{self.currency}"
+        return f"{self.amount} of {self.number} {self.currency}"
 
 
 class Wallet:
-    money: [list]
+
+    def __init__(self, m):
+        self.money = []
+        self.money.append(Money.get(m))
+
+    def get(self, x):
+        print(self.money[x])
+
+    def add(self, m):
+        self.money.append(Money.get(m))
+
+    def sort(self, y):
+        self.money[y]
+
+    def size(self):
+        for name in range(len(self.money)):
+            print(f' The index {name} for {self.money[name]}')
 
     def __str__(self):
-        return f"{self.money}"
+        return self.money
 
-    @staticmethod
-    def get(index, currency):
-        if currency == "USD":
-            index = 1
-        if currency == "EUR":
-            index = 2
-        elif currency == "RUB":
-            index = 3
-        return index
 
-    def __add__(self, money):
-        pass
 
-    def __sizeof__(self):
-        pass
-
-    def sort(self):
-        pass
-
-    def total_balance_in_tenge(self):
-        any(map(lambda number_tenge: isinstance(number_tenge, int), money))
+    # def total_balance_in_tenge(self, money) -> float:
+    #     total_balance = (sum((int(money[i]) for i in range(0, int(len(money))))))
+    #     print(total_balance)
 
 
